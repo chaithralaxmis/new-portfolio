@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(name, email, message);
+        const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdZvdR1UV4FJSiyn99Q-nAyb6WlLVd3bwUxv9gdkS95bkpxZQ/formResponse';
+
+        const formData = new URLSearchParams();
+        formData.append("entry.1509285031", name); // Name field
+        formData.append("entry.636053207", email); // Email field
+        formData.append("entry.1840440415", message); // Message field
+
+        fetch(formUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: formData.toString(),
+            mode: "no-cors",
+        })
+            .then(response => {
+                    setName('');
+                    setEmail('');
+                    setMessage('');
+                    alert('Form submitted successfully!');
+                
+            })
+            .catch((error) => {
+                console.error("Error submitting form:", error);
+                alert("Error submitting form.");
+            });
+    };
+
     return (
         <section id="contact" className="py-20 bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
             <div className="container mx-auto px-4">
@@ -78,19 +111,20 @@ const Contact = () => {
                         <form className="space-y-6">
                             <div>
                                 <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Name</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all" placeholder="Your Name" />
+                                <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all" placeholder="Your Name" />
                             </div>
                             <div>
                                 <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all" placeholder="your@email.com" />
+                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all" placeholder="your@email.com" />
                             </div>
                             <div>
                                 <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message</label>
-                                <textarea className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all h-32" placeholder="Your message..."></textarea>
+                                <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 outline-none transition-all h-32" placeholder="Your message..."></textarea>
                             </div>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
+                                onClick={handleSubmit}
                                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
                             >
                                 <Send className="w-5 h-5" />
