@@ -10,14 +10,14 @@ const Projects = () => {
             icon: <FileText className="w-8 h-8 text-blue-500" />,
             description: 'A comprehensive platform for conducting and managing technical assessments.',
             role: 'Designed and implemented the core assessment engine, enabling secure and scalable test-taking experiences. Optimized performance for high-concurrency usage.',
-            tech: ['React.js', 'Node.js', 'MongoDB']
+            tech: ['Vue.js', 'VUEX', 'Javascript' ,'HTML','CSS','Bootstrap','Axios']
         },
         {
             title: 'Recruitment Portal',
             organization: 'Simplify3x',
             icon: <Users className="w-8 h-8 text-green-500" />,
             description: 'Streamlines the end-to-end recruitment process from job posting to offer rollout.',
-            tech: ['Vue.js', 'Express', 'PostgreSQL'],
+            tech: ['Vue.js', 'VUEX', 'Javascript' ,'HTML','CSS','Bootstrap','Axios'],
             role: 'Developed the job application workflow and interviewer dashboard. Integrated email notifications and real-time status updates.'
         },
         {
@@ -25,7 +25,7 @@ const Projects = () => {
             organization: 'Simplify3x',
             icon: <Layout className="w-8 h-8 text-purple-500" />,
             description: 'A dedicated interface for candidates to track applications and take assessments.',
-            tech: ['React.js', 'Redux', 'Tailwind'],
+            tech: ['React.js', 'Redux', 'Javascript','HTML','CSS','Bootstrap','Axios'],
             role: 'Built a responsive and intuitive UI for candidates. Implemented resume parsing and profile management features.'
         },
         {
@@ -33,7 +33,7 @@ const Projects = () => {
             organization: 'Simplify3x',
             icon: <BookOpen className="w-8 h-8 text-orange-500" />,
             description: 'LMS for employee upskilling, featuring course management and progress tracking.',
-            tech: ['Vue.js', 'Firebase', 'Chart.js'],
+            tech: ['Vue.js', 'VUEX', 'Javascript' ,'HTML','CSS','Bootstrap','Axios'],
             role: 'Created the video course player and interactive quiz modules. Developed analytics dashboards for tracking learning progress.'
         },
         {
@@ -41,7 +41,7 @@ const Projects = () => {
             organization: 'Simplify3x',
             icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
             description: 'Centralized control hub for managing all platforms, users, and configurations.',
-            tech: ['React.js', 'GraphQL', 'AWS'],
+            tech: ['React.js', 'Redux', 'Javascript','HTML','CSS','Bootstrap','Axios'],
             role: 'Architected the role-based access control (RBAC) system. Developed complex data tables and reporting tools for system administrators.'
         }
     ];
