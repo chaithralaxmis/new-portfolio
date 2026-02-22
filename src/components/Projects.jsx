@@ -43,7 +43,15 @@ const Projects = () => {
             description: 'Centralized control hub for managing all platforms, users, and configurations.',
             tech: ['React.js', 'Redux', 'Javascript','HTML','CSS','Bootstrap','Axios'],
             role: 'Architected the role-based access control (RBAC) system. Developed complex data tables and reporting tools for system administrators.'
-        }
+        },
+         {
+            title: 'Dev Tinder',
+            organization: 'Personal',
+            icon: <Users className="w-8 h-8 text-blue-500" />,
+            description: 'A web platform designed exclusively for developers to connect, collaborate, and grow. Developers can create profiles, showcase skills, and send collaboration invites to build meaningful tech partnerships.',
+            tech: ['React.js', 'Javascript','HTML','CSS','Tailwinf','Axios', 'Node.js', 'MongoDB', 'Express.js'],
+            role: 'Architected and developed RESTful APIs, implemented business logic, and integrated them with responsive, user-friendly frontend interfaces.'
+        },
     ];
 
     return (
