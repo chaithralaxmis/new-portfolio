@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Monitor, Layout, Database, Globe } from 'lucide-react';
+import { Code2, Monitor, Layout, Database, Globe, Server, GitBranch, DatabaseIcon } from 'lucide-react';
 import chaithra from '../assets/chaithra.jpg';
 
 const About = () => {
@@ -12,7 +12,12 @@ const About = () => {
         { name: 'Javascript', icon: <Database className="w-5 h-5" />, color: 'bg-yellow-100 text-yellow-700' },
         { name: 'Bootstrap', icon: <Layout className="w-5 h-5" />, color: 'bg-purple-100 text-purple-700' },
         { name: 'Tailwind', icon: <Code2 className="w-5 h-5" />, color: 'bg-cyan-100 text-cyan-700' },
-        { name: 'Node.js', icon: <Database className="w-5 h-5" />, color: 'bg-green-100 text-green-700' },
+        { name: 'Node.js', icon: <Server className="w-5 h-5" />, color: 'bg-green-100 text-green-700' },
+        { name:"Express.js",icon:<Server className="w-5 h-5"/>,color:"bg-yellow-100 text-yellow-700"},
+        {name:"PostHog",icon:<Globe className="w-5 h-5"/>,color:"bg-blue-100 text-blue-700"},
+        {name:"Git",icon:<GitBranch className="w-5 h-5"/>,color:"bg-orange-100 text-orange-700"},
+        {name:"Vuex",icon:<DatabaseIcon className="w-5 h-5"/>,color:"bg-blue-100 text-blue-700"},
+        {name:"Redux",icon:<DatabaseIcon className="w-5 h-5"/>,color:"bg-purple-100 text-purple-700"}
     ];
 
     return (

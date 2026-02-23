@@ -49,7 +49,7 @@ const Projects = () => {
             organization: 'Personal',
             icon: <Users className="w-8 h-8 text-blue-500" />,
             description: 'A web platform designed exclusively for developers to connect, collaborate, and grow. Developers can create profiles, showcase skills, and send collaboration invites to build meaningful tech partnerships.',
-            tech: ['React.js', 'Javascript','HTML','CSS','Tailwinf','Axios', 'Node.js', 'MongoDB', 'Express.js'],
+            tech: ['React.js', 'Javascript','HTML','CSS','Tailwind','Axios', 'Node.js', 'MongoDB', 'Express.js'],
             role: 'Architected and developed RESTful APIs, implemented business logic, and integrated them with responsive, user-friendly frontend interfaces.'
         },
     ];
